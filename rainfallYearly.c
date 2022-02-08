@@ -22,19 +22,30 @@ int main(){
 
         }*/
 
-        // For loop to loop through months and collect data
+        // For loop to loop through months and collect data / add up 0 months
         for(int i = 0; i < SIZE; i++){
                 printf("Enter Rainfall for Month %d: ", i+1);
                 scanf("%lf", &months[i]);
+
         }
 
         // For loop to add all the months
+        int zero;
         double year;
         for(int i = 0; i < SIZE; i++){
                 year = year + months[i];
+
+                int m = months[i];
+                if(m == 0){
+                        zero = zero + 1;
+                }
         }
 
         printf("Calculated Yearly Total: %lf", year);
+        printf("Calculated Monthly Average: %lf", (year/SIZE));
+        printf("Months at Zero Rainfall: %d", zero);
+
+
 
 
         return 0;
